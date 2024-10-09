@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:elevate_task/features/home/data/models/product_model/rating.dart';
 import 'package:hive/hive.dart';
 part "product_entity.g.dart";
 @HiveType(typeId: 0)
@@ -15,7 +16,8 @@ class ProductEntity {
   String? category;
 @HiveField(5)
   String? image;
-  
+@HiveField(6)
+  double rate;
   ProductEntity({
     this.id,
     this.title,
@@ -23,6 +25,7 @@ class ProductEntity {
     this.description,
     this.category,
     this.image,
+   required this.rate,
   });
 
 

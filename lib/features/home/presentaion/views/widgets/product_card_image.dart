@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import "package:flutter_screenutil/flutter_screenutil.dart";
 
 class Product_card_image extends StatelessWidget {
+final String image;
   const Product_card_image({
-    super.key,
+    super.key, required this.image,
   });
 
   @override
@@ -12,11 +13,12 @@ class Product_card_image extends StatelessWidget {
       children: [
         
         Container(
-          height: 200.h,
+          height: 150.h,
           decoration: BoxDecoration(
+          
             image: DecorationImage(
                 image: NetworkImage(
-                    "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"),
+                    image),
                 fit: BoxFit.contain,),
           ),
         ),

@@ -5,9 +5,9 @@ import 'package:meta/meta.dart';
 
 part 'home_product_cubit_state.dart';
 
-class HomeProductCubitCubit extends Cubit<HomeProductCubitState> {
+class HomeProductCubit extends Cubit<HomeProductCubitState> {
   final GetHomeProductUsecase _getHomeProductUsecase;
-  HomeProductCubitCubit(this._getHomeProductUsecase)
+  HomeProductCubit(this._getHomeProductUsecase)
       : super(HomeProductCubitInitial());
 
   emit(HomeProductCubitLoading);

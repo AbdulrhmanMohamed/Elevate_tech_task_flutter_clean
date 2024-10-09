@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:elevate_task/core/errors/failure.dart';
 import 'package:elevate_task/features/home/data/datasources/home_local_data_source.dart';
@@ -22,6 +24,7 @@ class HomeRepoImpl extends HomeRepo {
   var localdata= _localDataSource.getHomeProducts();
   if(localdata.isNotEmpty)return right(localdata);
   var remotedata=await _remoteDataSource.getAllProducts();
+  log("remoteDAta===================================\n$remotedata");
   return right(remotedata);
 } on Exception catch (e) {
   return left(Failure(message: e.toString()));

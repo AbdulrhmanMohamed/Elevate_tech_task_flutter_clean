@@ -1,10 +1,11 @@
 
+import 'package:elevate_task/features/home/domain/entities/product_entity.dart';
 import 'package:elevate_task/features/home/presentaion/views/widgets/product_card_image.dart';
 import 'package:elevate_task/features/home/presentaion/views/widgets/product_card_text.dart';
 import 'package:flutter/material.dart';
-import "package:flutter_screenutil/flutter_screenutil.dart";
 class ProductCard extends StatelessWidget {
-  ProductCard({super.key});
+final ProductEntity product;
+  ProductCard({super.key, required this.product, });
   @override
   Widget build(BuildContext context) {
     
@@ -24,18 +25,18 @@ class ProductCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Product_card_image(),
+          Product_card_image(image:product.image!),
           SizedBox(
             height: 10,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: ProductCardText(
-              title: "Nice Aire Shoose",
-              subTitle: "Nice Shoose for women",
-              priceAfter: "Egp1200",
-              priceBefore: "Egp2000",
-              rating: 4.6,
+              title: product.title!,
+              subTitle: product.description!,
+              priceAfter: product.price.toString(),
+              priceBefore: product.price.toString(),
+              rating:product.rate
             ),
           )
         ],

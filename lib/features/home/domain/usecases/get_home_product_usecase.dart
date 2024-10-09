@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:elevate_task/core/errors/failure.dart';
 import 'package:elevate_task/core/generic_usecase.dart';
@@ -11,6 +13,7 @@ class GetHomeProductUsecase extends GenericUsecase<List<ProductEntity>, void> {
 
   @override
   Future<Either<Failure, List<ProductEntity>>> execute([void params]) async {
-    return await _homeRepo.getAllProducts();
+    var products= await _homeRepo.getAllProducts();
+    return products;
   }
 }

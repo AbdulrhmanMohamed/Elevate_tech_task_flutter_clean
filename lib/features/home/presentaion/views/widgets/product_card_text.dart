@@ -23,25 +23,30 @@ class ProductCardText extends StatelessWidget {
       children: [
         Text(
           title,
+          maxLines: 2,
           style: TextStyle(
-              fontFamily: "AfacadFlux",
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Color(0xff004087)),
+            fontFamily: "AfacadFlux",
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Color(0xff004087),
+            
+          ),
         ),
         Text(
           subTitle,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: TextStyle(color: Color(0xff004087), fontSize: 12),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(priceBefore),
+            Text("Egp${double.parse(priceBefore)+100}"),
             SizedBox(
               width: 20,
             ),
             Text(
-              priceAfter,
+              "Egp"+priceAfter,
               style: TextStyle(
                   decoration: TextDecoration.lineThrough, color: Colors.blue),
             ),
@@ -49,7 +54,6 @@ class ProductCardText extends StatelessWidget {
         ),
         Container(
           child: Row(
-            
             children: [
               Text(
                 "Review(${rating})",
@@ -61,7 +65,10 @@ class ProductCardText extends StatelessWidget {
               Spacer(),
               IconButton(
                 onPressed: null,
-                icon: Icon(Icons.add_circle,color: Color(0xff004087),),
+                icon: Icon(
+                  Icons.add_circle,
+                  color: Color(0xff004087),
+                ),
                 iconSize: 30,
                 alignment: Alignment.topRight,
               )

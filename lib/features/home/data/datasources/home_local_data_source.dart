@@ -6,6 +6,6 @@ class HomeLocalDataSource {
 
 List<ProductEntity>  getHomeProducts(){
   
-  return Hive.box("product_box").values.toList() as List<ProductEntity>;
+  return Hive.box<ProductEntity>("product_box").values.toList() ;
   }
 }

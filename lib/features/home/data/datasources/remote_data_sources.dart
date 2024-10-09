@@ -9,15 +9,15 @@ class HomeRemoteDataSource {
   HomeRemoteDataSource({required ApiService apiService})
       : _apiService = apiService;
   Future<List<ProductEntity>>getAllProducts() async {
-    final data = await _apiService.get("/products");
+    final data = await _apiService.get("/product");
       var products = getProductList(data);
       save_data_to_box(products, "product_box");
       return products;
   }
 
-  List<ProductEntity> getProductList(List<dynamic> data) {
+  List<ProductEntity> getProductList(List<Map<String, dynamic>> data) {
     List<ProductEntity> products = [];
-    (data )
+    (data as List<dynamic>)
         .forEach((product) => products.add(ProductModel.fromJson(product)));
     return products;
   }
