@@ -1,6 +1,8 @@
+import 'package:elevate_task/features/home/domain/entities/product_entity.dart';
+
 import 'rating.dart';
 
-class ProductModel {
+class ProductModel extends ProductEntity{
 	int? id;
 	String? title;
 	double? price;
@@ -17,7 +19,7 @@ class ProductModel {
 		this.category, 
 		this.image, 
 		this.rating, 
-	});
+	}):super(id:id,title: title,category: category,description:description,image:image,price: price);
 
 	factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
 				id: json['id'] as int?,
