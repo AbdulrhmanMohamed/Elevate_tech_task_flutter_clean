@@ -11,14 +11,10 @@ class RemoteDataSources {
   RemoteDataSources({required ApiService apiService})
       : _apiService = apiService;
   Future<Either<Failure, List<ProductEntity>>?> getAllProducts() async {
-    try {
-      final data = await _apiService.get("/product");
+   final data = await _apiService.get("/product");
       var products = getProductList(data);
       save_data_to_box(products, "product_box");
       return right(products);
-    } catch (e) {
-      return left(Failure(message: "someThing Went Wrong"));
-    }
   }
 
   List<ProductEntity> getProductList(List<Map<String, dynamic>> data) {
