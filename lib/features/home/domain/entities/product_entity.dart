@@ -16,8 +16,7 @@ class ProductEntity {
   String? category;
 @HiveField(5)
   String? image;
-@HiveField(6)
-  double rate;
+
   ProductEntity({
     this.id,
     this.title,
@@ -25,7 +24,6 @@ class ProductEntity {
     this.description,
     this.category,
     this.image,
-   required this.rate,
   });
 
 

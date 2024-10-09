@@ -36,7 +36,7 @@ final ProductEntity product;
               subTitle: product.description!,
               priceAfter: product.price.toString(),
               priceBefore: product.price.toString(),
-              rating:product.rate
+              rating:4.6
             ),
           )
         ],

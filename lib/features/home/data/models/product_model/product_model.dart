@@ -26,7 +26,7 @@ class ProductModel extends ProductEntity {
             description: description,
             image: image,
             price: price,
-            rate: rating!.rate!);
+           );
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
         id: json['id'] as int?,
