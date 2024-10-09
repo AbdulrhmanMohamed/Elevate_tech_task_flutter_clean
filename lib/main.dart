@@ -1,8 +1,15 @@
-import 'package:elevate_task/features/views/home_product.dart';
+import 'package:elevate_task/features/home/domain/entities/product_entity.dart';
+import 'package:elevate_task/features/home/presentaion/views/home_product.dart';
 import 'package:flutter/material.dart';
 import "package:google_fonts/google_fonts.dart";
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-void main(){
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+void main()async{
+await Hive.initFlutter();
+Hive.registerAdapter(ProductEntityAdapter());
+await Hive.openBox<ProductEntity>('product_box');
+
 
 runApp(const ElevateTech());
 }

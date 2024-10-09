@@ -1,6 +1,6 @@
 
-import 'package:elevate_task/features/views/widgets/product_card_image.dart';
-import 'package:elevate_task/features/views/widgets/product_card_text.dart';
+import 'package:elevate_task/features/home/presentaion/views/widgets/product_card_image.dart';
+import 'package:elevate_task/features/home/presentaion/views/widgets/product_card_text.dart';
 import 'package:flutter/material.dart';
 import "package:flutter_screenutil/flutter_screenutil.dart";
 class ProductCard extends StatelessWidget {
